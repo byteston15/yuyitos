@@ -2,6 +2,7 @@ const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv");
 const routerCategoria = require("./Routes/Categoria");
+const routerCliente = require("./Routes/Cliente");
 
 dotenv.config({path : './Config/config.env'});
 
@@ -12,8 +13,9 @@ const app = express();
 app.use(express.json());
 
 
- //Middlewares
+ //Routes
 app.use('/api/v1/yuyitos/', routerCategoria);
+app.use('/api/v1/yuyitos/', routerCliente);
 
 
 //Listening
